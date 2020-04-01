@@ -28,10 +28,24 @@
         <artifactId>slf4j-log4j12</artifactId>
         <version>1.7.26</version>
     </dependency>
-    <dependency>
+    <!--以下一个配置用于测试同一个项目依赖环境-->
+    <!--<dependency>
         <groupId>com.github.liuche51</groupId>
         <artifactId>sftpCpool-core</artifactId>
         <version>${project.version}</version>
+    </dependency>-->
+    <!--以下两个配置用于测试独立的jar包依赖环境下-->
+    <dependency>
+        <groupId>com.jcraft</groupId>
+        <artifactId>jsch</artifactId>
+        <version>0.1.55</version>
+    </dependency>
+    <dependency>
+        <groupId>com.github.liuche51</groupId>
+        <artifactId>sftpCpool-core</artifactId>
+        <version>1.0.0</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/lib/sftpCpool-core-1.0.0.jar</systemPath>
     </dependency>
 </dependencies>
 
