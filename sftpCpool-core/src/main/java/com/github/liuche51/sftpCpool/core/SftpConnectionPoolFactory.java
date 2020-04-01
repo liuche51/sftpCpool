@@ -33,6 +33,26 @@ public class SftpConnectionPoolFactory {
     private ScheduledExecutorService monitorExecutor;  //开启监控线程,对异常和空闲线程进行关闭.定期输出健康报告
     private ReentrantLock lock;
 
+    public void setMin_count(int min_count) {
+        this.min_count = min_count;
+    }
+
+    public void setMax_count(int max_count) {
+        this.max_count = max_count;
+    }
+
+    public void setTimeout(int timeout) {
+        this.timeout = timeout;
+    }
+
+    public void setMonitor_schedule_time(long monitor_schedule_time) {
+        this.monitor_schedule_time = monitor_schedule_time;
+    }
+
+    public void setMax_idle_close_time(long max_idle_close_time) {
+        this.max_idle_close_time = max_idle_close_time;
+    }
+
     public SftpConnectionPoolFactory() {
         lock = new ReentrantLock();
         monitorExecutor = Executors.newScheduledThreadPool(1);
