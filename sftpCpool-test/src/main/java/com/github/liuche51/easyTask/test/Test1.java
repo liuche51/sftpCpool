@@ -11,7 +11,8 @@ import java.util.Vector;
 
 public class Test1 {
     public static List<String> getSftpListFiles() throws Exception {
-        SftpConnectionPoolFactory sftpConnectionPoolFactory=new SftpConnectionPoolFactory();
+        SftpConnectionPoolFactory sftpConnectionPoolFactory=SftpConnectionPoolFactory.getInstance();
+        sftpConnectionPoolFactory.setMin_count(7);
         ChannelSftpInfo sftpInfo = sftpConnectionPoolFactory.getConnection("203.195.177.228", 22, "admin", "JFDE@568UGFR",30000);
         List<ChannelSftp.LsEntry> files = new LinkedList<ChannelSftp.LsEntry>();
         try {

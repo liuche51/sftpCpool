@@ -29,13 +29,13 @@
         <version>1.7.26</version>
     </dependency>
     <!--以下一个配置用于测试同一个项目依赖环境-->
-    <!--<dependency>
+    <dependency>
         <groupId>com.github.liuche51</groupId>
         <artifactId>sftpCpool-core</artifactId>
         <version>${project.version}</version>
-    </dependency>-->
+    </dependency>
     <!--以下两个配置用于测试独立的jar包依赖环境下-->
-    <dependency>
+    <!--<dependency>
         <groupId>com.jcraft</groupId>
         <artifactId>jsch</artifactId>
         <version>0.1.55</version>
@@ -46,7 +46,7 @@
         <version>1.0.0</version>
         <scope>system</scope>
         <systemPath>${project.basedir}/lib/sftpCpool-core-1.0.0.jar</systemPath>
-    </dependency>
+    </dependency>-->
 </dependencies>
 
 </project>

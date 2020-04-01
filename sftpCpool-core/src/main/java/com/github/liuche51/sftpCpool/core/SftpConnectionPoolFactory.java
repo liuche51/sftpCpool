@@ -6,10 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.TimerTask;
+import java.util.*;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -32,7 +29,7 @@ public class SftpConnectionPoolFactory {
     private Map<String, SftpConnectionPool> pools = new HashMap<>();
     private ScheduledExecutorService monitorExecutor;  //开启监控线程,对异常和空闲线程进行关闭.定期输出健康报告
     private ReentrantLock lock;
-
+    private static SftpConnectionPoolFactory factory=new SftpConnectionPoolFactory();
     public void setMin_count(int min_count) {
         this.min_count = min_count;
     }
@@ -52,8 +49,10 @@ public class SftpConnectionPoolFactory {
     public void setMax_idle_close_time(long max_idle_close_time) {
         this.max_idle_close_time = max_idle_close_time;
     }
-
-    public SftpConnectionPoolFactory() {
+    public static SftpConnectionPoolFactory getInstance(){
+        return factory;
+    }
+    private SftpConnectionPoolFactory() {
         lock = new ReentrantLock();
         monitorExecutor = Executors.newScheduledThreadPool(1);
         monitorExecutor.scheduleAtFixedRate(new TimerTask() {
