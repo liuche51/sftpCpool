@@ -2,12 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
+    <!--如需发版至maven请去掉parent节点-->
+  <!--  <parent>
         <artifactId>sftpCpool</artifactId>
         <groupId>com.github.liuche51</groupId>
         <version>1.0.0</version>
-    </parent>
-    <artifactId>sftpCpool-core</artifactId>
+    </parent>-->
+   <!-- <artifactId>sftpCpool-core</artifactId>-->
+    <!--发版至Maven时开启 发版参数：mvn clean deploy -P release-->
+    <groupId>com.github.liuche51</groupId>
+    <artifactId>sftpCpool</artifactId>
     <version>1.0.0</version>
     <name>${project.artifactId}</name>
     <description>${project.artifactId}</description>
@@ -128,8 +132,8 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/liuche51/easyTask.git</url>
-        <connection>https://github.com/liuche51/easyTask.git</connection>
+        <url>https://github.com/liuche51/sftpCpool.git</url>
+        <connection>https://github.com/liuche51/sftpCpool.git</connection>
         <developerConnection>https://github.com/liuche51</developerConnection>
     </scm>
     <developers>
